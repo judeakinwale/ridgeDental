@@ -3,7 +3,7 @@
 /* video */
 
  .video-container {
-    height: 70vh;
+    height: 85vh;
     position: relative;
     background-image: url("/dental-clinic-website-template.jpg");
    
@@ -22,6 +22,7 @@
     width: 100%;
     top: 0;
     left: 0;
+   
   }
    
   /*** A E S T H E T I C S ***/
@@ -50,11 +51,13 @@
     text-align: center;
     position: relative;
     z-index: 10;
+    color: #020202;
     
   }
 
   .callout h1{
     color: #8F3990;
+    font-size: 3rem;
   }
   
   .support {
