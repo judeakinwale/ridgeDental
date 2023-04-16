@@ -3,7 +3,7 @@
 /* video */
 
  .video-container {
-    height: 85vh;
+    height: 100vh;
     position: relative;
     background-image: url("/img/carousel-1.JPG");
    
@@ -22,13 +22,14 @@
     width: 100%;
     top: 0;
     left: 0;
+    background: linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,1));;
    
   }
    
   /*** A E S T H E T I C S ***/
   /***************************/
   
-  /* .video-container:after {
+  .video-container:after {
     content: '';
     display: block;
     height: 100%;
@@ -38,7 +39,7 @@
     left: 0;
     background: rgba(black, .2);
     z-index: 1;
-  } */
+  }
   
 
   .callout {
@@ -50,14 +51,23 @@
     height: 100%;
     text-align: center;
     position: relative;
-    z-index: 10;
-    color: #020202;
+    z-index: 2;
+    color: #ffffff;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+   
     
   }
 
   .callout h1{
-    color: #8F3990;
+    color: #A6448D;
     font-size: 3rem;
+    width: 80%;
+  }
+
+  .callout h2{
+    color: #ffffff;
+    font-size: 1.4rem;
+    width: 70%;
   }
   
   .support {
