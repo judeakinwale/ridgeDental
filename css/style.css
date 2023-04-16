@@ -53,15 +53,15 @@
     position: relative;
     z-index: 2;
     color: #ffffff;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
    
     
   }
 
   .callout h1{
-    color: #A6448D;
-    font-size: 3rem;
-    width: 80%;
+    color: #8F3990;
+    font-size: 3.5rem;
+    
   }
 
   .callout h2{
