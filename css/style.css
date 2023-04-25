@@ -102,7 +102,14 @@
         width: 100%;
       }
     
-  
+
+      .accordion-button:focus {
+        background-color: #8F3990;
+        color: #FFFFFF;
+        box-shadow:none;
+        border: 2px solid rgba(188, 13, 223, 0.125); ;
+    }
+     
 
   /* video end */
 :root {
