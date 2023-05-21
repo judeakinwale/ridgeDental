@@ -1,5 +1,7 @@
 /********** Template CSS **********/
-
+/* *{
+    background-color: #A6448D;
+} */
 /* video */
 
  .video-container {
@@ -210,7 +212,7 @@ h6,
     height: 100%;
     top: 0;
     left: -17px;
-    background: var(--primary);
+    background: #A6448D;
     transform: skew(40deg);
 }
 
@@ -309,12 +311,12 @@ h6,
 }
 
 .bg-appointment {
-    background: linear-gradient(rgba(119, 14, 110, 0.85), rgba(116, 17, 107, 0.85)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(#E797D270, #f4d1eb), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
 }
 
 .appointment-form {
-    background:  #8f3990;
+    background:  #ffffff;
 }
 
 .service-item img,
