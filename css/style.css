@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+*{
+    font-family: 'Manrope', sans-serif;
+}
+
+h1{
+    font-family: 'Manrope', sans-serif;
+}
+h2{
+    font-family: 'Manrope', sans-serif;
+}
+h5{
+    font-family: 'Manrope', sans-serif;
+}
+
+p{
+    font-family: 'Manrope', sans-serif;
+}
+
+li{
+    font-family: 'Manrope', sans-serif;
+}
+
 /********** Template CSS **********/
 /* *{
     background-color: #A6448D;
@@ -61,14 +85,15 @@
   }
 
   .callout h1{
-    color: #8F3990;
+    color: #ffffff;
     font-size: 3.5rem;
     
   }
 
   .callout h2{
     color: #ffffff;
-    font-size: 1.4rem;
+    margin-top: 20px;
+    font-size: 1.2rem;
     width: 70%;
   }
   
@@ -351,12 +376,14 @@ h6,
 }
 
 .bg-offer {
-    background:url(../img/carousel-1.jpg) center center no-repeat;
+    background:linear-gradient(to left, rgba(0,0,0,.5), rgb(20, 20, 20)),url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
+   
+
 }
 
 .offer-text {
-    background:  #8F3990;
+    background:  none;
 }
 
 .price-carousel .owl-nav {
@@ -443,15 +470,16 @@ h6,
 
 @media screen and (max-width: 600px) {
       .callout h1{
-        color: #8F3990;
+        color: #fdfdfd;
         font-size: 2.5rem; 
+        width: 90%;
       }
     
       .callout h2{
         margin-top: 4%;
         color: #ffffff;
         font-size: 1.2rem;
-        width: 90%;
+        width: 80%;
       }
    
   }
