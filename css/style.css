@@ -21,6 +21,23 @@ p{
 li{
     font-family: 'Manrope', sans-serif;
 }
+.center{
+    text-align: center;
+    width: 100%;
+}
+.team_card{
+    background:linear-gradient(to top,  rgb(20, 20, 20), rgba(41, 40, 40, 0.5)),url(../img/bg_doctor.png) center no-repeat;
+    background-position: center center;
+    object-fit: cover;
+    min-height: 320px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 5px;
+    color: white;
+    padding: 2%;
+}
 
 /********** Template CSS **********/
 /* *{
@@ -86,7 +103,8 @@ li{
 
   .callout h1{
     color: #ffffff;
-    font-size: 3.5rem;
+    font-size: 4.5rem;
+    width: 70%;
     
   }
 
@@ -378,8 +396,16 @@ h6,
 .bg-offer {
     background:linear-gradient(to left, rgba(0,0,0,.5), rgb(20, 20, 20)),url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
-   
+}
 
+.bg-offer-about {
+    background:linear-gradient(to left, rgba(0,0,0,.5), rgb(20, 20, 20)),url(../img/about.JPG) center center no-repeat;
+    background-size: cover;
+}
+
+.bg-offer-service {
+    background:url(../img/carousel-1.JPG) center no-repeat;
+    background-size: cover;
 }
 
 .offer-text {
