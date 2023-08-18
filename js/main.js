@@ -51,8 +51,38 @@
             $dropdown.off("mouseenter mouseleave");
         }
     });
-    
-    
+    $(document).ready(function() {
+        $('.dropdown').hover(function() {
+          $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function() {
+          $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+  
+        $('.dropdown > a').click(function() {
+          window.location.href = "service.html";
+        });
+      });
+
+
+    //show more
+    document.addEventListener("DOMContentLoaded", function () {
+        var wordsElement = document.getElementById("words");
+        var seeMoreButton = document.getElementById("seeMoreButton");
+      
+        var originalText = wordsElement.textContent;
+        if (originalText.length > 80) {
+          var truncatedText = originalText.substring(0, 80);
+          wordsElement.textContent = truncatedText + "...";
+          seeMoreButton.classList.remove("hidden");
+        }
+
+        seeMoreButton.addEventListener("click", function () {
+          wordsElement.textContent = originalText;
+          seeMoreButton.style.display = "none";
+        });
+      });
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
