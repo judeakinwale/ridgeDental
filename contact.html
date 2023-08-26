@@ -151,6 +151,13 @@
     </nav>
     <!-- Navbar End -->
 
+    <!-- Success Alert Start -->
+    <div id="successAlert" class="alert alert-success alert-dismissible fade show hidden" role="alert">
+      <strong>Thank You!</strong> We have received you feedback.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- Success Alert End -->
+
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
       <div class="modal-dialog modal-fullscreen">
@@ -249,11 +256,12 @@
             class="col-xl-6 col-lg-6 p-5 wow slideInUp"
             data-wow-delay="0.3s"
           >
-            <form>
+            <form id="feedbackForm1">
               <div class="row g-3">
                 <div class="col-12">
                   <input
                     type="text"
+                    name="name"
                     class="form-control border-0 bg-light px-4"
                     placeholder="Your Name"
                     style="height: 55px; background-color: #f4d1eb !important "
@@ -262,6 +270,7 @@
                 <div class="col-12">
                   <input
                     type="email"
+                    name="email"
                     class="form-control border-0 bg-light px-4"
                     placeholder="Your Email"
                     style="height: 55px; background-color: #f4d1eb !important "
@@ -270,6 +279,7 @@
                 <div class="col-12">
                   <input
                     type="text"
+                    name="subject"
                     class="form-control border-0 bg-light px-4"
                     placeholder="Subject"
                     style="height: 55px; background-color: #f4d1eb !important "
@@ -280,6 +290,7 @@
                     class="form-control border-0 bg-light px-4 py-3"
                     rows="5"
                     placeholder="Message"
+                    name="message"
                     style="background-color: #f4d1eb !important "
                   ></textarea>
                 </div>
@@ -459,5 +470,46 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+      document.getElementById('feedbackForm1').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      document.getElementById('spinner').classList.add('show')
+
+      // Get form data
+      const formData = new FormData(event.target);
+      
+      // Convert form data to JSON object
+      const formDataObject = {};
+      formData.forEach((value, key) => formDataObject[key] = value);
+
+      // Send POST request to the API
+      const apiUrl = 'http://localhost:8000/api/v1/feedback/'; // Replace with your API URL
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formDataObject),
+      })
+      .then(response => {
+        document.getElementById('spinner').classList.remove('show')
+        return response.json()
+      })
+      .then(data => {
+        document.getElementById('spinner').classList.remove('show')
+        document.getElementById('feedbackForm1').reset()
+        document.getElementById('successAlert').classList.remove('hidden')
+        window.scrollTo({ top: -10, behavior: 'smooth'});
+      })
+      .catch(error => {
+        document.getElementById('spinner').classList.remove('show')
+        console.error('Error:', error);
+        // Handle errors
+      });
+    });
+
+    </script>
   </body>
 </html>
