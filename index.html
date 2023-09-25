@@ -6,6 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Ridge Dental" name="keywords" />
     <meta content="Dental" name="description" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com"> -->
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
@@ -19,7 +21,7 @@
 
     <!-- Icon Font Stylesheet -->
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
       rel="stylesheet"
     />
     <link
@@ -83,7 +85,7 @@
             <div class="me-3 pe-3 border-end py-2">
               <p class="m-0">
                 <i class="fa fa-envelope-open me-2"></i
-                >info@ridgedentalpractice.com
+                >ask@theridgedental.com
               </p>
             </div>
             <div class="py-2">
@@ -96,6 +98,13 @@
       </div>
     </div>
     <!-- Topbar End -->
+
+    <!-- Success Alert Start -->
+    <div id="successAlert" class="alert alert-success alert-dismissible fade show hidden" role="alert">
+      <strong>Success!</strong> You have reserved your appointment.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- Success Alert End -->
 
     <!-- Navbar Start -->
     <nav
@@ -211,7 +220,7 @@
               <h3 class="text-white mb-3">Opening Hours</h3>
               <div class="d-flex justify-content-between text-white mb-3">
                 <h6 class="text-white mb-0">Mon - Fri</h6>
-                <p class="mb-0">8:00am - 9:00pm</p>
+                <p class="mb-0">9:00am - 5:00pm</p>
               </div>
               <div class="d-flex justify-content-between text-white mb-3">
                 <h6 class="text-white mb-0">Saturday</h6>
@@ -323,6 +332,7 @@
                 data-wow-delay="0.9s"
                 src="img/about.jpg"
                 style="object-fit: cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -357,48 +367,69 @@
               data-wow-delay="0.6s"
             >
               <h2 class=" mb-4" style="color: #000000;">Make Appointment</h2>
-              <form>
+              <form id="appointmentForm1">
                 <div class="row g-3">
                   <div class="col-12 col-sm-6">
                     <select
                       class="form-select border-0"
                       style="height: 55px;background-color:#f8e9f4 ;"
+                      name="type"
                     >
                       <option selected>Select A Service</option>
-                      <option value="1">Root Canal Treatment</option>
-                      <option value="2">Implant</option>
-                      <option value="2">Extraction</option>
-                      <option value="2">Bone Augmentation</option>
-                      <option value="2">Crown</option>
-                      <option value="2">Bridges</option>
-                      <option value="2">Dentures</option>
-                      <option value="3">Invisalign</option>
-                      <option value="3">Teeth Whitening</option>
-                      <option value="3">Full Mouth Rehab</option>
-                      <option value="3">Scale and Polish</option>
-                      <option value="3">Dental Fillings</option>
-                      <option value="3">
-                        Gum TreatmentDental Emergency Care
-                      </option>
-                      <option value="3">Veneers</option>
-                      <option value="3">Braces</option>
+                      <option value="Root Canal Treatment">Root Canal Treatment</option>
+                      <option value="Implant">Implant</option>
+                      <option value="Extraction">Extraction</option>
+                      <option value="Bone Augmentation">Bone Augmentation</option>
+                      <option value="Crown">Crown</option>
+                      <option value="Bridges">Bridges</option>
+                      <option value="Dentures">Dentures</option>
+                      <option value="Invisalign">Invisalign</option>
+                      <option value="Teeth Whitening">Teeth Whitening</option>
+                      <option value="Full Mouth Rehab">Full Mouth Rehab</option>
+                      <option value="Scale and Polish">Scale and Polish</option>
+                      <option value="Dental Fillings">Dental Fillings</option>
+                      <option value="Gum TreatmentDental Emergency Care">Gum TreatmentDental Emergency Care</option>
+                      <option value="Veneers">Veneers</option>
+                      <option value="Braces">Braces</option>
                     </select>
                   </div>
-                 
+
                   <div class="col-12 col-sm-6">
                     <input
                       type="text"
                       class="form-control bg-light border-0"
                       placeholder="Your Name"
-                      style="height: 55px;background-color:#f8e9f4 !important ;"
+                      style="
+                        height: 55px;
+                        background-color: #f8e9f4 !important ;
+                      "
+                      name="name"
+                      required
                     />
                   </div>
-                  <div class="col-12 ">
+                  <div class="col-12">
                     <input
                       type="email"
                       class="form-control bg-light border-0"
                       placeholder="Your Email"
-                      style="height: 55px;background-color:#f8e9f4 !important ;"
+                      style="
+                        height: 55px;
+                        background-color: #f8e9f4 !important ;
+                      "
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <input
+                      type="phone"
+                      class="form-control bg-light border-0"
+                      placeholder="Your Phone No."
+                      style="
+                        height: 55px;
+                        background-color: #f8e9f4 !important ;
+                      "
+                      name="phone"
                     />
                   </div>
                   <div class="col-12 col-sm-6">
@@ -409,7 +440,11 @@
                         placeholder="Appointment Date"
                         data-target="#date1"
                         data-toggle="datetimepicker"
-                        style="height: 55px;background-color:#f8e9f4 !important;"
+                        style="
+                          height: 55px;
+                          background-color: #f8e9f4 !important;
+                        "
+                        name="date"
                       />
                     </div>
                   </div>
@@ -421,7 +456,11 @@
                         placeholder="Appointment Time"
                         data-target="#time1"
                         data-toggle="datetimepicker"
-                        style="height: 55px;background-color:#f8e9f4 !important ;"
+                        style="
+                          height: 55px;
+                          background-color: #f8e9f4 !important ;
+                        "
+                        name="time"
                       />
                     </div>
                   </div>
@@ -463,11 +502,13 @@
                 class="position-absolute w-100 h-100"
                 src="img/before.jpg"
                 style="object-fit: cover"
+                loading="lazy"
               />
               <img
                 class="position-absolute w-100 h-100"
                 src="img/after.jpg"
                 style="object-fit: cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -490,7 +531,7 @@
                 data-wow-delay="0.6s"
               >
                 <div class="rounded-top overflow-hidden">
-                  <img class="img-fluid" src="img/cosmectic.png" alt="" />
+                  <img class="img-fluid" src="img/cosmectic.png" alt="" loading="lazy" />
                 </div>
                 <div
                   class="position-relative rounded-bottom text-center p-4"
@@ -504,7 +545,7 @@
                 data-wow-delay="0.9s"
               >
                 <div class="rounded-top overflow-hidden">
-                  <img class="img-fluid" src="img/Restorative.png" alt="" />
+                  <img class="img-fluid" src="img/Restorative.png" alt="" loading="lazy" />
                 </div>
                 <div
                   class="position-relative rounded-bottom text-center p-4"
@@ -549,6 +590,7 @@
                     class="img-fluid"
                     src="img/SurgicalEndodontics.png"
                     alt=""
+                    loading="lazy"
                   />
                 </div>
                 <div
@@ -565,7 +607,7 @@
                 data-wow-delay="0.6s"
               >
                 <div class="rounded-top overflow-hidden">
-                  <img class="img-fluid" src="img/General Care.png" alt="" />
+                  <img class="img-fluid" src="img/General Care.png" alt="" loading="lazy" />
                 </div>
                 <div
                   class="position-relative rounded-bottom text-center p-4"
@@ -669,17 +711,26 @@
               <a
                 class="btn btn-lg btn-lg-square rounded me-2" style="color:#000000;"
                 href="#" 
+                target="_blank"
                 ><i class="fab fa-twitter fw-normal"></i
               ></a>
               <a
               class="btn btn-lg btn-lg-square rounded me-2" style="color:#000000;"
               href="#" 
+              target="_blank"
               ><i class="fab fa-facebook-f fw-normal"></i
+              ></a>
+              <a
+              class="btn btn-lg btn-lg-square rounded me-2" style="color:#000000;"
+              href="https://www.tiktok.com/@ridgedental1" 
+              target="_blank"
+              ><i class="fab fa-tiktok fw-normal"></i
               ></a>
               
                 <a
                 class="btn btn-lg btn-lg-square rounded me-2" style="color:#000000;"
-                href="#" 
+                href="https://instagram.com/ridgedentalpractice" 
+                target="_blank"
                 ><i class="fab fa-instagram fw-normal"></i
               ></a>
             </div>
@@ -716,8 +767,8 @@
     ></a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" nonce="123456"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" nonce="123456"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
@@ -730,5 +781,69 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+      document.getElementById('appointmentForm1').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      document.getElementById('spinner').classList.add('show')
+
+      // Get form data
+      const formData = new FormData(event.target);
+      
+      // Convert form data to JSON object
+      const formDataObject = {};
+      formData.forEach((value, key) => formDataObject[key] = value);
+
+      function fixDateAndTime(dateStr, timeStr) {
+
+        // Parse the date string
+        const [month, day, year] = dateStr.split('/').map(Number);
+
+        // Parse the time string
+        const [time, meridiem] = timeStr.split(' ');
+        const [hours, minutes] = time.split(':').map(Number);
+        const isPM = meridiem === 'PM';
+
+        // Adjust hours for PM if needed
+        const adjustedHours = isPM && hours !== 12 ? hours + 12 : hours;
+
+        // Create the Date object
+        const combinedDate = new Date(year, month - 1, day, adjustedHours, minutes);
+
+        // console.log(combinedDate); // This will output the combined Date object
+        return combinedDate
+      }
+      
+      formDataObject.date = fixDateAndTime(formDataObject?.date, formDataObject?.time)
+      formDataObject.time = undefined
+
+      // Send POST request to the API
+      const apiUrl = 'https://ridge-api-js.vercel.app/api/v1/appointment/'; // Replace with your API URL
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formDataObject),
+      })
+      .then(response => {
+        document.getElementById('spinner').classList.remove('show')
+        return response.json()
+      })
+      .then(data => {
+        document.getElementById('spinner').classList.remove('show')
+        document.getElementById('appointmentForm1').reset()
+        document.getElementById('successAlert').classList.remove('hidden')
+        window.scrollTo({ top: -10, behavior: 'smooth'});
+      })
+      .catch(error => {
+        document.getElementById('spinner').classList.remove('show')
+        console.error('Error:', error);
+        // Handle errors
+      });
+    });
+
+    </script>
   </body>
 </html>

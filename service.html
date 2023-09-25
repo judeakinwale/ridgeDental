@@ -6,6 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Ridge Dental" name="keywords" />
     <meta content="Dental" name="description" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
@@ -19,7 +20,7 @@
 
     <!-- Icon Font Stylesheet -->
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
       rel="stylesheet"
     />
     <link
@@ -86,7 +87,7 @@
             <div class="me-3 pe-3 border-end py-2">
               <p class="m-0">
                 <i class="fa fa-envelope-open me-2"></i
-                >info@ridgedentalpractice.com
+                >ask@theridgedental.com
               </p>
             </div>
             <div class="py-2">
@@ -99,6 +100,13 @@
       </div>
     </div>
     <!-- Topbar End -->
+
+    <!-- Success Alert Start -->
+    <div id="successAlert" class="alert alert-success alert-dismissible fade show hidden" role="alert">
+      <strong>Success!</strong> You have reserved your appointment.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- Success Alert End -->
 
     <!-- Navbar Start -->
     <nav
@@ -206,7 +214,7 @@
             data-wow-delay="0.6s"
           >
             <div class="rounded-top overflow-hidden">
-              <img class="img-fluid" src="img/cosmectic.png" alt="" />
+              <img class="img-fluid" src="img/cosmectic.png" alt="" loading="lazy" />
             </div>
             <div
               class="position-relative rounded-bottom text-center p-4"
@@ -220,7 +228,7 @@
             data-wow-delay="0.3s"
           >
             <div class="rounded-top overflow-hidden">
-              <img class="img-fluid" src="img/SurgicalEndodontics.png" alt="" />
+              <img class="img-fluid" src="img/SurgicalEndodontics.png" alt="" loading="lazy" />
             </div>
             <div
               class="position-relative rounded-bottom text-center p-4"
@@ -235,7 +243,7 @@
             data-wow-delay="0.9s"
           >
             <div class="rounded-top overflow-hidden">
-              <img class="img-fluid" src="img/Restorative.png" alt="" />
+              <img class="img-fluid" src="img/Restorative.png" alt="" loading="lazy" />
             </div>
             <div
               class="position-relative rounded-bottom text-center p-4"
@@ -249,7 +257,7 @@
             data-wow-delay="0.6s"
           >
             <div class="rounded-top overflow-hidden">
-              <img class="img-fluid" src="img/General Care.png" alt="" />
+              <img class="img-fluid" src="img/General Care.png" alt="" loading="lazy" />
             </div>
             <div
               class="position-relative rounded-bottom text-center p-4"
@@ -281,7 +289,7 @@
                     <img
                       class="img-fluid rounded-top w-100"
                       src="img/Veneer 2.png"
-                      alt=""
+                      alt="" loading="lazy"
                     />
                   </div>
                   <div
@@ -298,7 +306,7 @@
                     <img
                       class="img-fluid rounded-top w-100"
                       src="img/Braces.png"
-                      alt=""
+                      alt="" loading="lazy"
                     />
                   </div>
                   <div
@@ -315,7 +323,7 @@
                     <img
                       class="img-fluid rounded-top w-100"
                       src="img/Invisalign.png"
-                      alt=""
+                      alt="" loading="lazy"
                     />
                   </div>
                   <div
@@ -332,7 +340,7 @@
                     <img
                       class="img-fluid rounded-top w-100"
                       src="img/Full Mouth Rehab.png"
-                      alt=""
+                      alt="" loading="lazy"
                     />
                   </div>
                   <div
@@ -349,7 +357,7 @@
                     <img
                       class="img-fluid rounded-top w-100"
                       src="img/Teeth Whitening.png"
-                      alt=""
+                      alt="" loading="lazy"
                     />
                   </div>
                   <div
@@ -400,7 +408,7 @@
                 <img
                   class="img-fluid rounded-top w-100"
                   src="img/Crown.png"
-                  alt=""
+                  alt="" loading="lazy"
                 />
               </div>
               <div
@@ -418,7 +426,7 @@
                 <img
                   class="img-fluid rounded-top w-100"
                   src="img/Dental Bridge 1.jpg"
-                  alt=""
+                  alt="" loading="lazy"
                 />
               </div>
               <div
@@ -435,7 +443,7 @@
                 <img
                   class="img-fluid rounded-top w-100"
                   src="img/Denture 2.jpg"
-                  alt=""
+                  alt="" loading="lazy"
                 />
               </div>
               <div
@@ -470,7 +478,7 @@
                 <img
                   class="img-fluid rounded-top w-100"
                   src="img/RCT.png"
-                  alt=""
+                  alt="" loading="lazy"
                 />
               </div>
               <div
@@ -491,7 +499,7 @@
                 <img
                   class="img-fluid rounded-top w-100"
                   src="img/Dental Filling.png"
-                  alt=""
+                  alt="" loading="lazy"
                 />
               </div>
               <div
@@ -511,7 +519,7 @@
                 <img
                   class="img-fluid rounded-top w-100"
                   src="img/Extraction.png"
-                  alt=""
+                  alt="" loading="lazy"
                 />
               </div>
               <div
@@ -531,7 +539,7 @@
                 <img
                   class="img-fluid rounded-top w-100"
                   src="img/Impant 2.png"
-                  alt=""
+                  alt="" loading="lazy"
                 />
               </div>
               <div
@@ -610,6 +618,7 @@
                         background-color: #f4d1eb !important ;
                       "
                       name="name"
+                      required
                     />
                   </div>
                   <div class="col-12">
@@ -622,6 +631,19 @@
                         background-color: #f4d1eb !important ;
                       "
                       name="email"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <input
+                      type="phone"
+                      class="form-control bg-light border-0"
+                      placeholder="Your Phone No."
+                      style="
+                        height: 55px;
+                        background-color: #f4d1eb !important ;
+                      "
+                      name="phone"
                     />
                   </div>
                   <div class="col-12 col-sm-6">
@@ -733,19 +755,29 @@
                 class="btn btn-lg btn-lg-square rounded me-2"
                 style="color: #000000"
                 href="#"
+                target="_blank"
                 ><i class="fab fa-twitter fw-normal"></i
               ></a>
               <a
                 class="btn btn-lg btn-lg-square rounded me-2"
                 style="color: #000000"
                 href="#"
+                target="_blank"
                 ><i class="fab fa-facebook-f fw-normal"></i
+              ></a>
+              <a
+                class="btn btn-lg btn-lg-square rounded me-2"
+                style="color: #000000"
+                href="https://www.tiktok.com/@ridgedental1"
+                target="_blank"
+                ><i class="fab fa-tiktok fw-normal"></i
               ></a>
 
               <a
                 class="btn btn-lg btn-lg-square rounded me-2"
                 style="color: #000000"
-                href="#"
+                href="https://instagram.com/ridgedentalpractice"
+                target="_blank"
                 ><i class="fab fa-instagram fw-normal"></i
               ></a>
             </div>
@@ -834,7 +866,7 @@
       formDataObject.time = undefined
 
       // Send POST request to the API
-      const apiUrl = 'http://localhost:8000/api/v1/appointment/'; // Replace with your API URL
+      const apiUrl = 'https://ridge-api-js.vercel.app/api/v1/appointment/'; // Replace with your API URL
       fetch(apiUrl, {
         method: 'POST',
         headers: {
