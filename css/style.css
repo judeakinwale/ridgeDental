@@ -40,11 +40,7 @@ li {
   padding: 2%;
 }
 
-/********** Template CSS **********/
-/* *{
-    background-color: #A6448D;
-} */
-/* video */
+
 
 .video-container {
   height: 100vh;
@@ -229,6 +225,22 @@ h6,
 .btn-lg-square {
   width: 46px;
   height: 46px;
+}
+
+.appointment_btn {
+  padding: 8px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+
+}
+.appointment_btn:hover{
+  color:white;
+  background-color: #a6448d !important
+  
 }
 
 .btn-square,
@@ -527,6 +539,8 @@ h6,
   width: 120px;
   height: 120px;
 }
+
+
 
 @media screen and (max-width: 600px) {
   .callout h1 {
