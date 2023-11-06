@@ -27,9 +27,26 @@ li {
 }
 .team_card {
   background: linear-gradient(to top, rgb(20, 20, 20), rgba(41, 40, 40, 0.5)),
-    url(../img/bg_doctor.png) center no-repeat;
-  background-position: center center;
-  object-fit: cover;
+    url(../img/male.png) center no-repeat;
+  background-position: top center;
+  background-size: contain;
+  
+  min-height: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 5px;
+  color: white;
+  padding: 2%;
+}
+
+.team_fem {
+  background: linear-gradient(to top, rgb(20, 20, 20), rgba(41, 40, 40, 0.5)),
+    url(../img/female.png) center no-repeat;
+  background-position: top center;
+  background-size: contain;
+  
   min-height: 320px;
   width: 100%;
   display: flex;
@@ -500,8 +517,8 @@ h6,
 }
 
 .testimonial-carousel {
-  margin-top: 60%;
-  background: #8f3990;
+
+  color: #ffffff;
 }
 
 .testimonial-carousel .owl-nav {
